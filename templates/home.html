@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beer Servings Estimation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h2>Estimate Beer Servings</h2>
+    <form action="/result" method="POST">
+
+        <label for="Country">Country:</label>
+        <select id="Country" name="Country">
+            <option value="USA">United States</option>
+            <option value="Germany">Germany</option>
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+            <option value="Brazil">Brazil</option>
+
+        </select><br>
+
+        <label for="Continent">Continent:</label>
+        <select id="Continent" name="Continent">
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Africa">Africa</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+            <option value="Australia">Australia</option>
+        </select><br>
+
+        <label for="Beer_Servings">Beer_Servings:</label>
+        <input type="range" id="Beer_Servings" name="Beer_Servings" min="0" max="400"
+            oninput="beerOutput.value = this.value">
+        <output id="beerOutput">0</output><br>
+
+        <label for="Wine_Servings">Wine_Servings:</label>
+        <input type="range" id="Wine_Servings" name="Wine_Servings" min="0" max="400"
+            oninput="wineOutput.value = this.value">
+        <output id="wineOutput">0</output><br>
+
+        <label for="Spirit_Servings">Spirit_Servings:</label>
+        <input type="range" id="Spirit_Servings" name="Spirit_Servings" min="0" max="400"
+            oninput="spiritOutput.value = this.value">
+        <output id="spiritOutput">0</output><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+
+</html>
